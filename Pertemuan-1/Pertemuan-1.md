@@ -1,4 +1,4 @@
-#JOBSHEET-1
+# JOBSHEET-1
 
 ## 1.10.1. Latihan Konseptual
 ### 1.Jelaskan 5 fungsi utama sistem operasi dengan contoh konkret dari minimal 2
@@ -94,6 +94,7 @@ ambisi saya untuk mendalami dunia editing gambar. Reputasi macOS dalam hal kesta
 perangkat Apple menjadi daya tarik yang sulit diabaikan. Saya ingin merasakan sendiri bagaimana efisiensi kerja yang ditawarkan macOS 
 dalam menangani aplikasi kreatif yang berat tanpa kendala teknis yang berarti. Setelah belasan tahun terbiasa dengan Windows, mengeksplorasi
 ekosistem baru yang berfokus pada sisi kreatif akan menjadi langkah pengembangan diri yang sangat menarik bagi saya.
+
 
 
 
