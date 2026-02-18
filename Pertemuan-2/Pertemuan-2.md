@@ -31,6 +31,8 @@ device yang diakses sebagai aliran karakter berurutan seperti terminal atau pera
 Gunakan grep untuk menampilkan hanya baris yang mengandung INFO atau
 WARN dari data.log. (Hint: gunakan grep -E dengan pola alternatif)
 
+![Alt text](Picture/2.4.png)
+
 ## Latihan 2.5
 Pilih satu port yang listening dari output ss -tulpn(misal port 22), lalu
 tuliskan service/proses yang membukanya. Jelaskan kegunaan port tersebut
@@ -64,17 +66,19 @@ UUID: 0515e1dc-e56a-40d7-b294-53e14e35a3b2
 Buat file server.log berisi minimal 10 baris dengan variasi kata: INFO,
 WARN, ERROR. Gunakan grep untuk menampilkan hanya baris ERROR.
 
-## Latihan 2.D
-Gunakan sed untuk mengganti semua kata server menjadi node pada file
-latihan. Tunjukkan sebelum dan sesudah.
+![Alt text](Picture/2.C.1.png)
+![Alt text](Picture/2.C.2.png)
 
 ## Latihan 2.D
 Gunakan sed untuk mengganti semua kata server menjadi node pada file
 latihan. Tunjukkan sebelum dan sesudah.
+
+![Alt text](Picture/2.D.png)
 
 ## Latihan 2.E
 Gunakan df -h lalu awk untuk menampilkan filesystem yang penggunaan disk
 di atas 70%.
+
 (di saya tidak ada yang lebih dari 70%)
 
 ## Latihan 2.F
@@ -97,3 +101,4 @@ proses tersebut seketika tanpa memberikan waktu bagi aplikasi untuk melakukan pe
 ## Latihan 2.G
 Gunakan systemctl –failed. Jika tidak ada yang gagal, pilih satu service
 aktif (misal ssh) dan tampilkan status serta 30 baris log terakhirnya.
+
