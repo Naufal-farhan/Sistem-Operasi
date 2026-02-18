@@ -27,7 +27,7 @@ Creative Work : MacOS
 Karna MacOS memiliki daya rendering yang bagus, dan Layar Retina meiliki akurasi warna yg tajam
 
 ## 1.10.2. Latihan Praktikal
-1. Download Ubuntu Server ISO dari website resmi
+1. Download Ubuntu Server ISO dari website resmi  ![Alt text](Picture_Laporan_Praktikum/praktikum_1.3.1)
 2. Create VM baru di VirtualBox (RAM: 2GB, Disk: 25GB)
 3. Install dengan automatic partitioning (guided)
 4. Buat user account dengan password yang kuat
@@ -83,3 +83,4 @@ ambisi saya untuk mendalami dunia editing gambar. Reputasi macOS dalam hal kesta
 perangkat Apple menjadi daya tarik yang sulit diabaikan. Saya ingin merasakan sendiri bagaimana efisiensi kerja yang ditawarkan macOS 
 dalam menangani aplikasi kreatif yang berat tanpa kendala teknis yang berarti. Setelah belasan tahun terbiasa dengan Windows, mengeksplorasi
 ekosistem baru yang berfokus pada sisi kreatif akan menjadi langkah pengembangan diri yang sangat menarik bagi saya.
+
