@@ -79,11 +79,16 @@ latihan. Tunjukkan sebelum dan sesudah.
 Gunakan df -h lalu awk untuk menampilkan filesystem yang penggunaan disk
 di atas 70%.
 
+![Alt text](Picture/2.E.png)
+
 (di saya tidak ada yang lebih dari 70%)
 
 ## Latihan 2.F
 Jalankan sleep 600 &. Temukan PID-nya dengan ps. Hentikan dengan
 SIGTERM. Jelaskan beda SIGTERM vs SIGKILL.
+
+![Alt text](Picture/2.F.1.png)
+![Alt text](Picture/2.F.2.png)
 
 Perbedaan SIGTERM vs SIGKILL
 Berdasarkan konsep manajemen proses dalam dokumen:
@@ -101,4 +106,7 @@ proses tersebut seketika tanpa memberikan waktu bagi aplikasi untuk melakukan pe
 ## Latihan 2.G
 Gunakan systemctl –failed. Jika tidak ada yang gagal, pilih satu service
 aktif (misal ssh) dan tampilkan status serta 30 baris log terakhirnya.
+
+![Alt text](Picture/2.G.png)
+
 
