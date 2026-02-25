@@ -36,4 +36,11 @@ Implementasikan script backup yang:
 2. Menampilkan progress dengan tee
 3. Mencatat stdout ke backup-success.log
 4. Mencatat stderr ke backup-error.log
-5. Menambahkan timestamp di setiap log entry 
+5. Menambahkan timestamp di setiap log entry
+
+tar -cvzf "$BACKUP_FILE" "$SOURCE_DIR" \
+  2> >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') - $line"; done >> "$ERROR_LOG") \
+  | while read line; do 
+        echo "$(date '+%Y-%m-%d %H:%M:%S') - $line" | tee -a "$SUCCESS_LOG"
+    done
+
