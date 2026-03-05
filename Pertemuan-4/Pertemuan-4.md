@@ -43,6 +43,78 @@ $ cd /<user>/C (Terdapat pesan error, mengapa ?) : error karena jalur (path) ter
 $ pwd
 ![Alt text](Picture/Percobaan1/5.png)
 
+## Percobaan 2: Manipulasi File
+
+1. Perintah cp untuk mengkopi file atau seluruh direktori
+   $ cat > contoh
+   $ cp contoh contoh1
+   $ ls -l
+   $ cp contoh A
+   $ ls -l A
+   $ cp contoh contoh1 A/D
+   $ ls -l A/D
+![Alt text](Picture/Percobaan2/1.png)
+
+2. Perintah mv untuk memindah file
+   $ mv contoh contoh2
+   $ ls -l
+   $ mv contoh1 contoh2 A/D
+   $ ls -l A/D
+   $ mv contoh contoh1 C
+![Alt text](Picture/Percobaan2/2.png)
+
+3. Perintah rm untuk menghapus file
+   $ rm contoh2
+   $ ls -l
+   $ rm -i contoh
+   $ rm -rf A C
+   $ ls -l
+![Alt text](Picture/Percobaan2/3.png)
+
+## Percobaan 3: Symbolic Link
+
+1. Membuat shortcut (file link)
+   $ echo "Hallo apa khabar" > halo.txt
+   $ ls -l
+   $ ln halo.txt z
+   $ ls -l
+   $ cat z
+   $ mkdir mydir
+   $ ln z mydir/halo.juga
+   $ cat mydir/halo.juga
+   $ ln -s z bye.txt
+   $ ls -l bye.txt
+   $ cat bye.txt
+![Alt text](Picture/Percobaan3/1.png)
+
+## Percobaan 4: Melihat Isi File
+
+   $ ls -l
+   $ file halo.txt
+   $ file bye.txt
+![Alt text](Picture/Percobaan4/1.png)
+
+## Percobaan 5: Mencari file
+
+1. Perintah find
+   $ find /home -name "*.txt" -print > myerror.txt
+   $ cat myerror.txt
+   $ find . -name "*.txt" -exec wc -l '{}' ';'
+![Alt text](Picture/Percobaan5/1.png)
+
+2. Perintah which
+   $ which ls
+![Alt text](Picture/Percobaan5/2.png)
+
+3. Perintah locate
+   $ locate "*.txt"
+![Alt text](Picture/Percobaan5/3.png)
+
+## Percobaan 6 Mencari text pada file
+   $ grep Hallo *.txt
+![Alt text](Picture/Percobaan6/1.png)
+
+   
 ## Latihan
 LATIHAN:
 1. Cobalah urutan perintah berikut :
@@ -101,6 +173,7 @@ LATIHAN:
 15. Hapus direktori work dan isinya dengan satu perintah.
 ![Alt text](Picture/Latihan/7.png)
 (SS latihan 7-15)
+
 
 
 
