@@ -439,5 +439,6 @@ yang benar.
 <img width="736" height="33" alt="image" src="https://github.com/user-attachments/assets/d86a9ae3-933d-4381-bf7d-34c3075ac64c" />
 
 6. Simpan riwayat perintah yang Anda gunakan ke file riwayat-arsip.txt.
-![Uploading image.png…]()
+<img width="736" height="33" alt="image" src="https://github.com/user-attachments/assets/ac4ece4c-43c5-4a64-92dd-0832bdd41c03" />
+
 
