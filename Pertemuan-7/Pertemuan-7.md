@@ -356,5 +356,88 @@ done
 <img width="1185" height="836" alt="image" src="https://github.com/user-attachments/assets/df9d91f6-8830-4e15-9996-d8dca071de10" />
 (no 1-4)
 
+## Tugas Praktikum 1 — Toolkit Bash Administrator Pribadi
+Instruksi tugas:
+1. Tambahkan konfigurasi pada .bashrc untuk:
+• menambahkan direktori bin pribadi ke PATH,
+• membuat minimal 2 alias yang membantu kerja harian,
+• membuat minimal 1 fungsi shell yang berguna untuk administrasi.
+<img width="658" height="325" alt="image" src="https://github.com/user-attachments/assets/85350237-b5ec-47da-a647-0b54b06261d0" />
 
+2. Pastikan konfigurasi tersebut aktif kembali saat membuka shell login.<img width="666" height="653" alt="image" src="https://github.com/user-attachments/assets/f135fd83-a505-48c4-b2b1-e34fe8a1ff02" />
+
+3. Buat satu script sederhana di direktori bin pribadi, misalnya script untukmenampilkan ringkasan sistem.
+<img width="577" height="97" alt="image" src="https://github.com/user-attachments/assets/d3ccf04c-7381-472e-b957-0268892b734b" />
+
+4. Uji dari direktori yang berbeda untuk memastikan script dapat dipanggil tanpamenuliskan path lengkap.
+<img width="873" height="764" alt="image" src="https://github.com/user-attachments/assets/60a8fc68-906e-463d-bfc9-1df9744dbfc6" />
+
+5. Simpan bukti pengujian ke file toolkit-bash-report.txt
+<img width="1329" height="749" alt="image" src="https://github.com/user-attachments/assets/ccde326d-f291-4089-8a78-4d0d06e2eb07" />
+<img width="697" height="41" alt="image" src="https://github.com/user-attachments/assets/604554cc-8932-4c51-9c55-598c17be5b77" />
+
+## Tugas Praktikum 2 — Audit File Konfigurasi dan Logging Aman
+Instruksi tugas:
+1. Buat file laporan bernama audit-konfigurasi-$(date +%F).txt.
+<img width="841" height="665" alt="image" src="https://github.com/user-attachments/assets/ffbce0a4-c1f1-4fbb-894a-983a0009e41c" />
+
+2. Cari file *.conf di dalam /etc dan simpan hasilnya ke file laporan.
+
+3. Catat jumlah total file konfigurasi yang ditemukan.
+
+4. Jika ada pesan error, simpan ke file terpisah, misalnya audit-error.log.
+
+5. Tampilkan isi laporan ke terminal dan sekaligus simpan menggunakan tee.
+6. Tambahkan ringkasan singkat 3–5 baris yang menjelaskan mengapa pemisahanstdout dan stderr penting dalam audit sistem.
+<img width="733" height="800" alt="image" src="https://github.com/user-attachments/assets/85d23396-29f0-48c5-9106-3a439161fc4f" />
+(1-6)
+
+## Tugas Praktikum 3 — Mini Health Check Harian Server
+Instruksi tugas:
+1. Buat script Bash bernama daily-healthcheck pada direktori bin pribadi.
+<img width="619" height="170" alt="image" src="https://github.com/user-attachments/assets/e429b5d1-5ef7-4bfa-b363-986331c0e496" />
+
+2. Script minimal harus menampilkan:
+• tanggal dan waktu,
+• hostname,
+• user aktif,
+• shell aktif,
+• uptime,
+• penggunaan memori,
+• penggunaan filesystem root,
+• 10 baris terakhir history command yang relevan dengan pengecekan.
+<img width="625" height="67" alt="image" src="https://github.com/user-attachments/assets/e92bfe90-0961-4e93-ad23-41d82d57a951" />
+
+3. Simpan hasil ke file log harian, misalnya healthcheck-$(date +%F).log.
+<img width="743" height="180" alt="image" src="https://github.com/user-attachments/assets/fe0de79a-c8f6-47b3-9ad1-3b7c394d6f51" />
+
+4. Tampilkan hasil ke terminal dan ke file secara bersamaan.
+(lihat ss sebelum2nya)
+5. Jika Anda menggunakan pipeline dengan tee, cek juga status exit command
+
+## Tugas Praktikum 4 — Penanganan File dengan Nama Kompleks dan Arsip Aman
+Instruksi tugas:
+1. Buat minimal 4 file contoh dengan nama yang bervariasi, termasuk:
+• nama file yang mengandung spasi,
+• nama file yang mengandung tanda kurung siku atau karakter khusus,
+• file dengan pola nama serupa untuk diuji dengan wildcard.
+<img width="609" height="75" alt="image" src="https://github.com/user-attachments/assets/6bfd4493-44b9-4b91-9e0a-d9b0cad3cd14" />
+
+2. Tunjukkan perbedaan hasil jika file diakses tanpa quoting dan dengan quoting
+yang benar.
+<img width="617" height="71" alt="image" src="https://github.com/user-attachments/assets/5e18aeda-0182-4f85-90fb-d2d8497e022b" />
+<img width="643" height="102" alt="image" src="https://github.com/user-attachments/assets/fabac213-b7c0-45fc-a6ba-36fd79d2e281" />
+
+3. Lakukan preview wildcard dengan echo sebelum dipakai untuk operasi nyata.
+<img width="1054" height="71" alt="image" src="https://github.com/user-attachments/assets/67ed3740-9912-4410-8e22-3f018daa3ede" />
+
+4. Salin file-file tersebut ke direktori backup dengan nama yang aman.
+<img width="844" height="286" alt="image" src="https://github.com/user-attachments/assets/b1b49128-e506-4c40-90e4-0ed128727d83" />
+<img width="806" height="89" alt="image" src="https://github.com/user-attachments/assets/de16a9e5-e3b6-4c0a-8776-01f307c481d2" />
+
+5. Buat arsip tar.gz dari hasil backup.
+<img width="736" height="33" alt="image" src="https://github.com/user-attachments/assets/d86a9ae3-933d-4381-bf7d-34c3075ac64c" />
+
+6. Simpan riwayat perintah yang Anda gunakan ke file riwayat-arsip.txt.
+![Uploading image.png…]()
 
