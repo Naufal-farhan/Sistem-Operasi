@@ -227,3 +227,134 @@ backup_conf ~/ praktikum - os / week07 - bash / sample - app . conf
 ls - lah ~/ praktikum - os / week07 - bash / backup
 type backup_conf
 <img width="1050" height="736" alt="image" src="https://github.com/user-attachments/assets/f2d97b21-c5ba-4d09-8ff5-4f42be35b8f5" />
+
+## Praktikum 6.9 — Menggunakan Completion Dasar dan Melihat History
+### 1. Pastikan file contoh tersedia:
+cd ~/ praktikum - os / week07 - bash / sampel
+touch laporan - harian . log laporan - mingguan . log laporan -
+bulanan . log
+ls
+<img width="1234" height="185" alt="image" src="https://github.com/user-attachments/assets/3bcf33cd-d3e2-402d-bc95-ae6344d6ec06" />
+
+### 2. Uji completion file:
+a) Ketik cat lap lalu tekan Tab dua kali.
+b) Amati daftar file yang memiliki prefix lap.
+c) Ketik lebih spesifik, misalnya cat laporan-h lalu tekan Tab.
+<img width="891" height="766" alt="image" src="https://github.com/user-attachments/assets/3220d964-8911-4cf3-90e8-671560862642" />
+<img width="897" height="598" alt="image" src="https://github.com/user-attachments/assets/864e4e31-956a-4bd5-9f94-76a82f8fb7b6" />
+
+### 3. Jalankan beberapa perintah sederhana:
+pwd
+ls - lah
+date
+whoami
+history | tail -n 10
+<img width="963" height="684" alt="image" src="https://github.com/user-attachments/assets/2de74684-75a3-467b-8266-254312cd9680" />
+
+## Praktikum 6.10 — Menelusuri Perintah Diagnostik dengan History
+### 1. Jalankan beberapa perintah diagnostik:
+df -h
+free -h
+uptime
+ps aux | head
+<img width="1075" height="584" alt="image" src="https://github.com/user-attachments/assets/1bb15b09-7d0d-49cb-a6e0-29a7e58650d5" />
+
+### 2. Cari ulang perintah diagnostik dari history:
+history | grep -E 'df -h| free -h| uptime |ps aux '
+<img width="1001" height="712" alt="image" src="https://github.com/user-attachments/assets/cfc80ab2-91ff-4f06-9727-a62b327db7d3" />
+
+### 3. Jalankan ulang salah satu perintah berdasarkan nomor history:
+! < NOMOR_HISTORY_ANDA >
+<img width="1072" height="156" alt="image" src="https://github.com/user-attachments/assets/c987dc82-08fb-4821-9642-4f39d07c8530" />
+
+### 4. Simpan potongan history ke file dokumentasi:
+history | tail -n 20 > ~/ praktikum - os / week07 - bash / diag
+- history . txt
+cat ~/ praktikum - os / week07 - bash / diag - history . txt
+<img width="1249" height="706" alt="image" src="https://github.com/user-attachments/assets/6db9c40f-0545-4479-93ee-1310fe6d3a9d" />
+
+## Praktikum 6.11 — Mencoba Wildcard Dasar
+### 1. Masuk ke direktori sampel:
+cd ~/ praktikum - os / week07 - bash / sampel
+ls
+
+### 2. Coba beberapa pola wildcard:
+ls *. log
+ls catatan -?. txt
+ls backup -0[12]. tar
+
+### 3. Coba beberapa ekspansi lain:
+echo log -{ pagi , siang , malam }. txt
+echo ~
+echo ~/ praktikum - os / week04 - bash
+<img width="1179" height="485" alt="image" src="https://github.com/user-attachments/assets/963427a3-ab87-439b-8b50-65ff54ac96b9" />
+(no 1-3)
+
+## Praktikum 6.12 — Mengarsipkan Banyak Log Sekaligus
+###  1. Siapkan file log tambahan:
+cd ~/ praktikum - os / week07 - bash / logs
+touch access -01. log access -02. log access -03. log
+ls
+<img width="986" height="148" alt="image" src="https://github.com/user-attachments/assets/81d50eb8-e89e-4ab7-a69d-66bcb8a0a351" />
+
+###  2. Preview file yang akan diproses:
+echo *. log
+echo access -0?. log
+<img width="786" height="111" alt="image" src="https://github.com/user-attachments/assets/fd063787-ab5e-4fe4-8a33-9bb20f6aef39" />
+
+###  3. Pindahkan semua file log ke folder arsip:
+mkdir -p arsip - log
+mv *. log arsip - log /
+ls arsip - log
+<img width="681" height="118" alt="image" src="https://github.com/user-attachments/assets/b3260ab0-7f0e-4f68-888e-fa51a452ba15" />
+
+###  4. Kompres folder arsip:
+tar - czf arsip - log - $ ( date +% F ) . tar . gz arsip - log
+ls - lah
+<img width="1079" height="224" alt="image" src="https://github.com/user-attachments/assets/16b8d91c-4fb7-4071-b754-7536b78659cc" />
+
+## Praktikum 6.13 — Membedakan Single Quote, Double Quote, dan Escape
+### 1. Uji single quote dan double quote:
+echo '$USER bekerja di $HOME '
+echo " $USER bekerja di $HOME "
+
+### 2. Uji escape karakter spasi:
+cd ~/ praktikum - os / week07 - bash / ruang - nama
+ls laporan \ server \ april . txt
+
+### 3. Uji akses file yang sama dengan double quote:
+cat " laporan server april .txt"
+
+<img width="941" height="276" alt="image" src="https://github.com/user-attachments/assets/d95bb041-2a7d-44e2-ad0d-8c423a8f9b62" />
+(no 1-3)
+
+## Praktikum 6.14 — Menangani File dengan Nama Sulit Secara Aman
+
+### 1. Pastikan file target tersedia:
+cd ~/ praktikum - os / week07 - bash / ruang - nama
+ls - lah
+
+### 2. Salin file dengan nama kompleks ke folder backup:
+cp -- " backup [ mingguan ] server . conf " \
+" $HOME / praktikum -os/week07 - bash / backup /backup -
+mingguan - server . conf "
+
+### 3. Gunakan variabel untuk memproses path dengan aman:
+file_asli =" $HOME / praktikum -os/week07 - bash /ruang - nama /
+backup [ mingguan ] server . conf "
+file_salinan =" $HOME / praktikum -os/week07 - bash / backup /
+backup - mingguan -server -v2. conf "
+cp -- " $file_asli " " $file_salinan "
+ls - lah " $HOME / praktikum -os/week07 - bash / backup "
+
+### 4. Tampilkan daftar file hasil backup:
+for file in " $HOME "/ praktikum - os / week07 - bash / backup /*;
+do
+printf 'Hasil backup : %s\n' " $file "
+done
+
+<img width="1185" height="836" alt="image" src="https://github.com/user-attachments/assets/df9d91f6-8830-4e15-9996-d8dca071de10" />
+(no 1-4)
+
+
+
