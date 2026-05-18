@@ -26,3 +26,18 @@ setfacl -d -m u:deploy:r-x /srv/webapp
 webapp-team: Bisa menulis (rwx dari group permission & ACL default).
 user deploy: Hanya membaca (r-x dikunci oleh ACL khusus user).
 Pewarisan Group: Dijamin oleh SGID bit (chmod 2...).
+
+### Latihan Latihan 9.B — Kebijakan Akun dan Quota
+#### Tuliskan langkah untuk membuat user intern, menambahkannya ke group labgroup, memaksa pergantian password tiap 45 hari (warning 7 hari), memberi izin sudo hanya untuk systemctl status, dan menetapkan quota ruang serta inode sederhana pada /home/
+sudo groupadd labgroup
+sudo useradd -m -g labgroup -s /bin/bash intern
+sudo passwd intern
+
+sudo chage -M 45 -W 7 intern
+
+echo "intern ALL=(ALL) NOPASSWD: /usr/bin/systemctl status" | sudo tee /etc/sudoers.d/intern-policy
+sudo chmod 0440 /etc/sudoers.d/intern-policy
+
+sudo setquota -u intern 1000000 1100000 10000 11000 /home
+
+sudo repquota -u /home | grep intern
